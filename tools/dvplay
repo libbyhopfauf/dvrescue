@@ -122,7 +122,7 @@ while [[ "${@}" != "" ]] ; do
         _mkdir2 "${SIDECAR_DIR}/dvrescue_tmp"
         JPG_OUTPUT="${SIDECAR_DIR}/dvrescue_tmp/${BASENAME}_$(echo "$COUNTER" | awk '{ printf("%06i", $1) }').jpg"
       else
-        JPG_OUTPUT="${SIDECAR_DIR}/${BASENAME}_${TC_FILENAME_SAFE}.jpg"
+        JPG_OUTPUT="${SIDECAR_DIR}/${TC_FILENAME_SAFE}.jpg"
       fi
       ffmpeg -ss "${PTS}" -i "${DVFILE}" -vframes:v 1 -c:v copy -f rawvideo - | \
       xxd -p -c 80 | \
